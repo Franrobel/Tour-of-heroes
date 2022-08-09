@@ -6,5 +6,5 @@
     (click)="messageService.clear()"
            >
            Clear messages</button>
-<div *ngIf="let message of messageService.message">{{message}}</div>
+<div *ngFor="let message of messageService.messages">{{message}}</div>
 </div>

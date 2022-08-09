@@ -6,7 +6,7 @@ import { Hero } from '../hero';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-@Input() hero?: Hero;
+@Input() hero?: Hero; //uso el @Input para recibir información a través del componenete padre (hero-component)
 
   constructor() { }
 

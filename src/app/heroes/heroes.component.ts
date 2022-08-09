@@ -28,7 +28,7 @@ this.getHeroes()
   onSelect(hero: Hero): void {
     console.log('this.selectedHero before', this.selectedHero)
     this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
+    this.messageService.add(`${hero.name}: Selected hero id=${hero.id}`)
     console.log('this.selectedHero after', this.selectedHero)
   }
   getHeroes(): void {
