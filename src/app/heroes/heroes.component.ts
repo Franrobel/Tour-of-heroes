@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'heroes',
   templateUrl: './heroes.component.html',
@@ -12,28 +11,20 @@ export class HeroesComponent implements OnInit {
   
 
   heroes: Hero[] = [];
-  selectedHero?: Hero
 
 
 
-constructor(private heroService: HeroService, private messageService: MessageService) { }
+constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
-   // console.log('donde esta ', this.selectedHero)
- //  console.log('heroes outside,', this.heroes);
-   //console.log('selectedHero outside,', this.selectedHero);
-this.getHeroes()
+
+    this.getHeroes()
 
   }
-  onSelect(hero: Hero): void {
-    console.log('this.selectedHero before', this.selectedHero)
-    this.selectedHero = hero;
-    this.messageService.add(`${hero.name}: Selected hero id=${hero.id}`)
-    console.log('this.selectedHero after', this.selectedHero)
-  }
   getHeroes(): void {
-                  
+  //this.heroes =  this.heroService.getHeroes()    
  this.heroService.getHeroes()
  .subscribe(heroes => this.heroes = heroes);
   }
+ 
 }
